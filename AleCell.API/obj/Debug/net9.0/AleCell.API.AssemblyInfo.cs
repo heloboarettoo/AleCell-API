@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AleCell.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e74275e829e4e4b95ef415c180ad6e0dd34bd5fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13e1ff6f2870b552f98bbe4974fc4534595c93ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("AleCell.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AleCell.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

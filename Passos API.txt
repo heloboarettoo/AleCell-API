@@ -36,21 +36,21 @@ cd AleCell.API
     dotnet add package Swashbuckle.AspNetCore --version 9.0.6
 
 
-9. Criar na pasta Models, as classes do diagrama, que está na Docs (Categoria, Produto, Usuario);
+9. Criar na pasta Models, as classes do diagrama, que está na Docs (Categoria, Produto, Usuario); ok
 
-9.1. Lembre-se de adicionar os DataAnnotations necessários, em caso de dúvidas, consulte os projetos já desenvolvidos;
+9.1. Lembre-se de adicionar os DataAnnotations necessários, em caso de dúvidas, consulte os projetos já desenvolvidos; ok
 
 
-10. Criar na pasta do projeto uma pasta Data;
+10. Criar na pasta do projeto uma pasta Data; ok
 
 
 11. Criar na pasta Data a classe AppDbContext e fazer as alterações abaixo:
-using <NOME DO PROJETO>.API.Models;
+using AleCell.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace <NOME DO PROJETO>.API.Data;
+namespace AleCell.API.Data;
 
 public class AppDbContext : IdentityDbContext<Usuario>
 {
