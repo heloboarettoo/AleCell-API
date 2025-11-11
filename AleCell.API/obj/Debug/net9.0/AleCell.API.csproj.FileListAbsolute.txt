@@ -1,0 +1,8 @@
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.csproj.AssemblyReference.cache
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.AssemblyInfoInputs.cache
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.AssemblyInfo.cs
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.csproj.CoreCompileInputs.cache
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.sourcelink.json
