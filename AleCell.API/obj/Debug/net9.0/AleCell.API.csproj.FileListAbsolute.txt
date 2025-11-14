@@ -283,3 +283,14 @@ C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\refint\AleCell.AP
 C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.pdb
 C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\AleCell.API.genruntimeconfig.cache
 C:\Users\etec\Desktop\AleCell-API\AleCell.API\obj\Debug\net9.0\ref\AleCell.API.dll
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.csproj.AssemblyReference.cache
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.AssemblyInfoInputs.cache
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.AssemblyInfo.cs
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.csproj.CoreCompileInputs.cache
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.sourcelink.json
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.dll
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\refint\AleCell.API.dll
+C:\Users\etec\Desktop\AleCell-API-1\AleCell.API\obj\Debug\net9.0\AleCell.API.pdb

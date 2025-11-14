@@ -13,11 +13,11 @@
 5. Buscar fotos e dados de produtos e categorias para a loja e salvar as informações coletas na pasta "Docs";
 
 
-6. Executar o comando abaixo no terminal, substituindo <NOME DO PROJETO> pelo nome do seu projeto, lembrando de seguir as regras de nomeclatura (Primeira letra maiuscula, não adicionar: espaços, caracteres especiais, acentos ou começar com número):
+6. Executar o comando abaixo no terminal, substituindo AleCell pelo nome do seu projeto, lembrando de seguir as regras de nomeclatura (Primeira letra maiuscula, não adicionar: espaços, caracteres especiais, acentos ou começar com número):
     criar o projeto da API
     dotnet new webapi -o AleCell.API --use-controllers
 
-6.1 Altera no arquivo <NOME DO PROJETO>.API.csproj a linha 5:
+6.1 Altera no arquivo AleCell.API.csproj a linha 5:
     <Nullable>disable</Nullable>
 
 
@@ -145,7 +145,7 @@ public class AppDbContext : IdentityDbContext<Usuario>
 }     ok
 
 
-12. Alterar o arquivo appsettings.json (Lembre-se de mudar: <NOME DO BANCO> e <NOME DO PROJETO>): ok
+12. Alterar o arquivo appsettings.json (Lembre-se de mudar: <NOME DO BANCO> e AleCell): ok
 {
   "Logging": {
     "LogLevel": {
@@ -159,8 +159,8 @@ public class AppDbContext : IdentityDbContext<Usuario>
   },
   "JwtSettings": {
     "SecretKey" : "MinhaChaveSecretaDoSistemaQueEstouDesenvolvendoParaOProjetoInterdisciplinar",
-    "Issuer": "<NOME DO PROJETO>.API",
-    "Audience": "<NOME DO PROJETO>.APIUsers",
+    "Issuer": "AleCell.API",
+    "Audience": "AleCell.APIUsers",
     "ExpirationInMinutes": 60
   }
 } ok
@@ -168,8 +168,8 @@ public class AppDbContext : IdentityDbContext<Usuario>
 
 13. Alterar o arquivo Program.cs  ok
 using System.Text;
-using <NOME DO PROJETO>.API.Data;
-using <NOME DO PROJETO>.API.Models;
+using AleCell.API.Data;
+using AleCell.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -251,7 +251,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "<NOME DO PROJETO> API",
+        Title = "AleCell API",
         Version = "v1",
         Description = "API de fornecimento de dados de produtos"
     });
@@ -296,7 +296,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "<NOME DO PROJETO> v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AleCell v1");
         c.RoutePrefix = string.Empty;
     });
 }
@@ -321,12 +321,12 @@ app.Run(); ok
     dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.10
 
-16. Executar no terminal para Criar os Controllers:
+16. Executar no terminal para Criar os Controllers: ok
     dotnet aspnet-codegenerator controller -name CategoriasController -async -api -m Categoria -dc AppDbContext -outDir Controllers
     dotnet aspnet-codegenerator controller -name ProdutosController -async -api -m Produto -dc AppDbContext -outDir Controllers
 
 
-17. Executar e testar as rotas de dos controllers
+17. Executar e testar as rotas de dos controllers ok
 
 18. Criar a pasta Middleware e dentro a classe ErrorHandlingMiddleware: ok
 using System.Net;
@@ -458,13 +458,13 @@ public class AuthResponseDto
 }
 
 
-20. Adicionar uma pasta Services e dentro desta 2 pastas:
+20. Adicionar uma pasta Services e dentro desta 2 pastas: OK
     Implementations
     Interfaces
 
 
-21. Criar na pasta Interfaces a interface IFileService:
-namespace <NOME DO PROJETO>.API.Services.Interfaces;
+21. Criar na pasta Interfaces a interface IFileService: OK
+namespace AleCell.API.Services.Interfaces;
 
 public interface IFileService
 {
@@ -474,10 +474,10 @@ public interface IFileService
 }
 
 
-22. Criar na pasta Implementations a classe FileService:
-using <NOME DO PROJETO>.API.Services.Interfaces;
+22. Criar na pasta Implementations a classe FileService: OK 
+using AleCell.API.Services.Interfaces;
 
-namespace <NOME DO PROJETO>.API.Services.Implementations;
+namespace AleCell.API.Services.Implementations;
 
 public class FileService : IFileService
 {
@@ -539,8 +539,8 @@ public class FileService : IFileService
 }
 
 
-23. Criar a seguinte estrutura de pastas:
-    <NOME DO PROJETO>.API
+23. Criar a seguinte estrutura de pastas: ok
+    AleCell.API
         wwwroot
             img
                 usuarios
@@ -549,10 +549,10 @@ public class FileService : IFileService
     Adicionar as imagens dos produtos na pasta produtos, e sua foto de usuário na pasta usuario
 
 
-24. Criar na pasta Interfaces a interface IJwtService.cs:
-using <NOME DO PROJETO>.API.DTOs;
+24. Criar na pasta Interfaces a interface IJwtService.cs: ok
+using AleCell.API.DTOs;
 
-namespace <NOME DO PROJETO>.API.Services.Interfaces;
+namespace AleCell.API.Services.Interfaces;
 
 public interface IJwtService
 {
@@ -560,10 +560,10 @@ public interface IJwtService
 }
 
 
-25. Criar na pasta Interface a interface IAuthService.cs:
-using <NOME DO PROJETO>.API.DTOs;
+25. Criar na pasta Interface a interface IAuthService.cs: ok
+using AleCell.API.DTOs;
 
-namespace <NOME DO PROJETO>.API.Services.Interfaces;
+namespace AleCell.API.Services.Interfaces;
 
 public interface IAuthService
 {
@@ -573,15 +573,15 @@ public interface IAuthService
 }
 
 
-26. Criar na pasta Implementations a classe JwtService.cs:
+26. Criar na pasta Implementations a classe JwtService.cs: ok
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using <NOME DO PROJETO>.API.Services.Interfaces;
-using <NOME DO PROJETO>.API.DTOs;
+using AleCell.API.Services.Interfaces;
+using AleCell.API.DTOs;
 
-namespace <NOME DO PROJETO>.API.Services.Implementations;
+namespace AleCell.API.Services.Implementations;
 
 public class JwtService : IJwtService
 {
@@ -629,12 +629,12 @@ public class JwtService : IJwtService
 
 27. Criar na pasta Implementations a classe AuthService.cs:
 using Microsoft.AspNetCore.Identity;
-using <NOME DO PROJETO>.API.DTOs;
-using <NOME DO PROJETO>.API.Services.Interfaces;
-using <NOME DO PROJETO>.API.Models;
-using <NOME DO PROJETO>.API.Helpers;
+using AleCell.API.DTOs;
+using AleCell.API.Services.Interfaces;
+using AleCell.API.Models;
+using AleCell.API.Helpers;
 
-namespace <NOME DO PROJETO>.API.Services.Implementations;
+namespace AleCell.API.Services.Implementations;
 
 public class AuthService : IAuthService
 {
@@ -767,11 +767,11 @@ public class AuthService : IAuthService
 
 28. Alterando o Program.cs para registrar os serviços:
 using System.Text;
-using <NOME DO PROJETO>.API.Data;
-using <NOME DO PROJETO>.API.Middleware;
-using <NOME DO PROJETO>.API.Models;
-using <NOME DO PROJETO>.API.Services.Implementations;
-using <NOME DO PROJETO>.API.Services.Interfaces;
+using AleCell.API.Data;
+using AleCell.API.Middleware;
+using AleCell.API.Models;
+using AleCell.API.Services.Implementations;
+using AleCell.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -859,7 +859,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "<NOME DO PROJETO> API",
+        Title = "AleCell API",
         Version = "v1",
         Description = "API de fornecimento de dados de produtos"
     });
@@ -904,7 +904,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "<NOME DO PROJETO> v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AleCell v1");
         c.RoutePrefix = string.Empty;
     });
 }
@@ -929,10 +929,10 @@ app.Run();
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using <NOME DO PROJETO>.API.DTOs;
-using <NOME DO PROJETO>.API.Services.Interfaces;
+using AleCell.API.DTOs;
+using AleCell.API.Services.Interfaces;
 
-namespace <NOME DO PROJETO>.API.Controllers;
+namespace AleCell.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
