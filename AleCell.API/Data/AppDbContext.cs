@@ -29,12 +29,12 @@ public class AppDbContext : IdentityDbContext<Usuario>
         List<IdentityRole> roles =
         [
             new IdentityRole() {
-               Id = 1,
+               Id = "0b44ca04-f6b0-4a8f-a953-1f2330d30894",
                Name = "Administrador",
                NormalizedName = "ADMINISTRADOR"
             },
             new IdentityRole() {
-               Id = 2,
+               Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
                Name = "Cliente",
                NormalizedName = "CLIENTE"
             },
@@ -45,38 +45,14 @@ public class AppDbContext : IdentityDbContext<Usuario>
         #region Populate Usuário
         List<Usuario> usuarios = [
             new Usuario(){
-                Id = 1,
+                Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
                 Email = "helooboarettoo@gmail.com",
-                NormalizedEmail = "helooboaretto@gmail.com",
+                NormalizedEmail = "HELOOBOARETTO@GMAIL.COM",
                 UserName = "heloboaretto",
-                NormalizedUserName = "heloboaretto",
+                NormalizedUserName = "HELOBOARETTO",
                 LockoutEnabled = true,
                 EmailConfirmed = true,
                 Nome = "Heloísa Boaretto",
-                DataNascimento = DateTime.Parse("24/07/2008"),
-                Foto = "/img/usuarios/avatar.png"
-            },
-            new Usuario(){
-                Id = 2,
-                Email = "helooboarettoo@gmail.com",
-                NormalizedEmail = "helooboaretto@gmail.com",
-                UserName = "otavioCastro",
-                NormalizedUserName = "otavioCastro",
-                LockoutEnabled = true,
-                EmailConfirmed = true,
-                Nome = "Otávio Augusto de Castro",
-                DataNascimento = DateTime.Parse("24/07/2008"),
-                Foto = "/img/usuarios/avatar.png"
-            },
-            new Usuario(){
-                Id = 3,
-                Email = "helooboarettoo@gmail.com",
-                NormalizedEmail = "helooboaretto@gmail.com",
-                UserName = "Thigas",
-                NormalizedUserName = "Thigas",
-                LockoutEnabled = true,
-                EmailConfirmed = true,
-                Nome = "Thiago Henrique Primo",
                 DataNascimento = DateTime.Parse("24/07/2008"),
                 Foto = "/img/usuarios/avatar.png"
             }
@@ -109,7 +85,7 @@ public class AppDbContext : IdentityDbContext<Usuario>
                 Id = 1,
                 Nome = "Iphone",
                 Foto = "/img/categorias/1.jpg",
-                ExibirHome = true
+                Cor = ""
             },
             new Categoria() {
                 Id = 2,
@@ -124,60 +100,60 @@ public class AppDbContext : IdentityDbContext<Usuario>
     {
         List<Produto> produtos = new()
         {
-            new Produtos() {
-                Id = 1
-                Nome = "Iphone 17"
-                Descricao = " "
-                CategoriaId = 1
+            new Produto() {
+                Id = 1,
+                Nome = "Iphone 17",
+                Descricao = " ",
+                CategoriaId = 1,
                 Foto = "/img/iphone-17/.jpg"
             },
-            new Produtos() {
-                Id = 2
-                Nome = "Iphone 17 pro max"
-                Descricao = " "
-                CategoriaId = 1
+            new Produto() {
+                Id = 2,
+                Nome = "Iphone 17 pro max",
+                Descricao = " ",
+                CategoriaId = 1,
                 Foto = "/img/iphone-17pro/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "Iphone Air"
-                Descricao = " "
-                CategoriaId = 1
+            new Produto() {
+                Id = 3,
+                Nome = "Iphone Air",
+                Descricao = " ",
+                CategoriaId = 1,
                 Foto = "/img/iphone-air/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "Iphone 16"
-                Descricao = " "
-                CategoriaId = 1
+            new Produto() {
+                Id = 4,
+                Nome = "Iphone 16",
+                Descricao = " ",
+                CategoriaId = 1,
                 Foto = "/img/iphone16/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "Iphone 16e"
-                Descricao = " "
-                CategoriaId = 1
+            new Produto() {
+                Id = 5,
+                Nome = "Iphone 16e",
+                Descricao = " ",
+                CategoriaId = 1,
                 Foto = "/img/iphone16e/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "Xiaomi 15T"
-                Descricao = " "
-                CategoriaId = 2
+            new Produto() {
+                Id = 6,
+                Nome = "Xiaomi 15T",
+                Descricao = " ",
+                CategoriaId = 2,
                 Foto = "/img/xiaomi15T/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "Xiaomi 17 pro"
-                Descricao = " "
-                CategoriaId = 2
+            new Produto() {
+                Id = 7,
+                Nome = "Xiaomi 17 pro",
+                Descricao = " ",
+                CategoriaId = 2,
                 Foto = "/img/xiaomi17pro/.jpg"
             },
-            new Produtos() {
-                Id = 1
-                Nome = "XRedmi 15C"
-                Descricao = " "
-                CategoriaId = 2
+            new Produto() {
+                Id = 8,
+                Nome = "XRedmi 15C",
+                Descricao = " ",
+                CategoriaId = 2,
                 Foto = "/img/Xredmi15C/.jpg"
             },
         };
