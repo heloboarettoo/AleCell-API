@@ -1,17 +1,17 @@
-1. Executar diretamente na pasta do repositório o comando:
+1. Executar diretamente na pasta do repositório o comando: ok
     dotnet new mvc -o <NOME DO PROJETO>.UI
 
 
 2. Executar diretamente na pasta do repositório, se existir um arquivo <NOME DO PROJETO>.sln
-  dotnet sln add <NOME DO PROJETO>.UI\<NOME DO PROJETO>.UI.csproj
+  dotnet sln add <NOME DO PROJETO>.UI\<NOME DO PROJETO>.UI.csproj ok
 
 
-3. Altera no arquivo <NOME DO PROJETO>.API.csproj a linha 5:
+3. Altera no arquivo <NOME DO PROJETO>.API.csproj a linha 5: ok
     <Nullable>disable</Nullable>
 
 
-4. Criar na pasta a classe ApiSettings
-namespace <NOME DO PROJETO>.UI.Models;
+4. Criar na pasta a classe ApiSettings ok
+namespace AleCell.UI.Models;
 
 public class ApiSettings
 {
@@ -20,10 +20,10 @@ public class ApiSettings
 }
 
 
-5. Abra o arquivo launchSettings.json do projeto <NOME DO PROJETO>.API e copie o caminho de rota da chave http -> applicationUrl.
+5. Abra o arquivo launchSettings.json do projeto <NOME DO PROJETO>.API e copie o caminho de rota da chave http -> applicationUrl. ok
 
 
-6. Abra o arquivo appsettings.json do projeto <NOME DO PROJETO>.UI e adicione o código abaixo alterando a rota para a copiada no passo 4:
+6. Abra o arquivo appsettings.json do projeto <NOME DO PROJETO>.UI e adicione o código abaixo alterando a rota para a copiada no passo 4: ok
 {
   "Logging": {
     "LogLevel": {
@@ -33,14 +33,14 @@ public class ApiSettings
   },
   "AllowedHosts": "*",
   "ApiSettings": {
-    "BaseUrl": "http://localhost:5058/api/",
+    "BaseUrl": "https://localhost:7064;http://localhost:5194",
     "TimeoutSeconds": 30
   }
 }
 
     
-7. Registre os serviços no Program.cs:
-using <NOME DO PROJETO>.UI.Models;
+7. Registre os serviços no Program.cs: ok
+using AleCell.UI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -116,13 +116,13 @@ app.MapControllerRoute(
 app.Run();
 
 
-8. Criar uma pasta ViewModels dentro da pasta do projeto <NOME DO PROJETO>.UI
+8. Criar uma pasta ViewModels dentro da pasta do projeto AleCell.UI ok
 
 
-9. Criar a classe LoginVM dentro da pasta ViewModels:
+9. Criar a classe LoginVM dentro da pasta ViewModels: ok
 using System.ComponentModel.DataAnnotations;
 
-namespace <NOME DO PROJETO>.UI.ViewModels;
+namespace AleCell.UI.ViewModels;
 
 public class LoginVM
 {
@@ -138,10 +138,10 @@ public class LoginVM
 }
 
 
-10. Criar a classe RegistroVM dentro da pasta ViewModels:
+10. Criar a classe RegistroVM dentro da pasta ViewModels: ok
 using System.ComponentModel.DataAnnotations;
 
-namespace <NOME DO PROJETO>.UI.ViewModels;
+namespace AleCell.UI.ViewModels;
 
 public class RegistroVM
 {
@@ -166,15 +166,15 @@ public class RegistroVM
 
     public IFormFile Foto { get; set; }
 }
+ ok
+
+11. Crie uma pasta DTOs dentro da pasta do projeto AleCell.UI ok
 
 
-11. Crie uma pasta DTOs dentro da pasta do projeto <NOME DO PROJETO>.UI
-
-
-12. Crie na pasta DTOs a classe UserDto:
+12. Crie na pasta DTOs a classe UserDto: ok
 using System.Text.Json.Serialization;
 
-namespace <NOME DO PROJETO>.UI.DTOs;
+namespace AleCell.UI.DTOs;
 
 public class UserDto
 {
@@ -198,10 +198,10 @@ public class UserDto
 }
 
 
-13. Crie na pasta DTOs a classe AuthResponseDto:
+13. Crie na pasta DTOs a classe AuthResponseDto: ok
 using System.Text.Json.Serialization;
 
-namespace <NOME DO PROJETO>.UI.DTOs;
+namespace AleCell.UI.DTOs;
 
 public class AuthResponseDto
 {
@@ -216,18 +216,18 @@ public class AuthResponseDto
 }
 
 
-14. Crie uma pasta Services dentro da pasta do projeto <NOME DO PROJETO>.UI, dentro desta nova pasta criar outras duas pastas:
-  - Interfaces
-  - Implementations
+14. Crie uma pasta Services dentro da pasta do projeto AleCell.UI, dentro desta nova pasta criar outras duas pastas: ok
+  - Interfaces ok
+  - Implementations ok
 
 
-15. Crie na pasta Services\Implementations a classe BaseApiService:
+15. Crie na pasta Services\Implementations a classe BaseApiService: ok
 using System.Text;
 using System.Text.Json;
-using <NOME DO PROJETO>.UI.Models;
+using AleCell.UI.Models;
 using Microsoft.Extensions.Options;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace AleCell.UI.Services.Implementations;
 
 public abstract class BaseApiService
 {
@@ -337,10 +337,10 @@ public class ErrorResponse
 }
 
 
-16. Criar dentro da pasta Services\Interfaces a interface IAuthService:
-using <NOME DO PROJETO>.UI.ViewModels;
+16. Criar dentro da pasta Services\Interfaces a interface IAuthService:    ok
+using AleCell.UI.ViewModels;
 
-namespace <NOME DO PROJETO>.UI.Services.Interfaces;
+namespace AleCell.UI.Services.Interfaces;
 
 public interface IAuthService
 {
@@ -357,16 +357,16 @@ public interface IAuthService
 
 
 
-17. Criar dentro da pasta Services\Implementations a classe AuthService:
+17. Criar dentro da pasta Services\Implementations a classe AuthService: ok
 using System.Text;
 using System.Text.Json;
-using <NOME DO PROJETO>.UI.DTOs;
-using <NOME DO PROJETO>.UI.Models;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
-using <NOME DO PROJETO>.UI.ViewModels;
+using AleCell.UI.DTOs;
+using AleCell.UI.Models;
+using AleCell.UI.Services.Interfaces;
+using AleCell.UI.ViewModels;
 using Microsoft.Extensions.Options;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace AleCell.UI.Services.Implementations;
 
 public class AuthService : BaseApiService, IAuthService
 {
@@ -538,11 +538,10 @@ public class AuthService : BaseApiService, IAuthService
 }
 
 
-18. Crei na pasta Services\Implementations a classe UserContextService:
-using System.Security.Claims;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
+18. Crei na pasta Services\Implementations a classe UserContextService: ok
+using AleCell.UI.Services.Interfaces;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace AleCell.UI.Services.Implementations;
 
 public class UserContextService
 {
@@ -572,10 +571,10 @@ public class UserContextService
 }
 
 
-19. Crie uma pasta Middleware na raiz do projeto <NOME DO PROJETO>.UI, e dentro a classe SessionAuthMiddleware:
-using <NOME DO PROJETO>.UI.Services.Implementations;
+19. Crie uma pasta Middleware na raiz do projeto AleCell.UI, e dentro a classe SessionAuthMiddleware: ok
+using AleCell.UI.Services.Implementations;
 
-namespace <NOME DO PROJETO>.UI.Middleware;
+namespace AleCell.UI.Middleware;
 
 public class SessionAuthMiddleware
 {
@@ -596,10 +595,10 @@ public class SessionAuthMiddleware
 
 
 20. Adicionando os novos serviços no Program.cs:
-using <NOME DO PROJETO>.UI.Middleware;
-using <NOME DO PROJETO>.UI.Models;
-using <NOME DO PROJETO>.UI.Services.Implementations;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
+using AleCell.UI.Middleware;
+using AleCell.UI.Models;
+using AleCell.UI.Services.Implementations;
+using AleCell.UI.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -684,12 +683,12 @@ app.MapControllerRoute(
 app.Run();
 
 
-21. Adicione um Controller com o nome AuthController na pastas Controllers
-using <NOME DO PROJETO>.UI.Services.Interfaces;
-using <NOME DO PROJETO>.UI.ViewModels;
+21. Adicione um Controller com o nome AuthController na pastas Controllers   ok
+using AleCell.UI.Services.Interfaces;
+using AleCell.UI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace <NOME DO PROJETO>.UI.Controllers;
+namespace AleCell.UI.Controllers;
 
 public class AuthController : Controller
 {
@@ -768,7 +767,7 @@ main {
 }
 
 
-22.1 Crie um arquivo auth.css:
+22.1 Crie um arquivo auth.css:  ok
 main {
     justify-content: center;
     align-items: center;
@@ -779,8 +778,8 @@ main {
 }
 
 
-23. Criar na pasta Views\Shared\_LoginPartial.cshtml:
-@using <NOME DO PROJETO>.UI.Services
+23. Criar na pasta Views\Shared\_LoginPartial.cshtml:  ok
+@using AleCell.UI.Services
 @inject IAuthService AuthService
 @{
     string foto = AuthService.GetUserFoto();
@@ -808,7 +807,7 @@ else
 }
 
 
-24. Altere o arquivo _Layout.cshtml:
+24. Altere o arquivo _Layout.cshtml:  ok
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -867,11 +866,11 @@ else
 </html>
 
 
-25. Altere o arquivo Views\_ViewImports.cshtml:
-@using <NOME DO PROJETO>.UI
-@using <NOME DO PROJETO>.UI.Models
-@using <NOME DO PROJETO>.UI.ViewModels
-@using <NOME DO PROJETO>.UI.Services.Interfaces
+25. Altere o arquivo Views\_ViewImports.cshtml: ok
+@using AleCell.UI
+@using AleCell.UI.Models
+@using AleCell.UI.ViewModels
+@using AleCell.UI.Services.Interfaces
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
@@ -892,10 +891,10 @@ else
 </script>
 
 
-27. Adicione na pasta Views uma pasta Auth
+27. Adicione na pasta Views uma pasta Auth ok
 
 
-28. Crie dentro da pasta Views\Auth um arquivo com o nome Login.cshtml:
+28. Crie dentro da pasta Views\Auth um arquivo com o nome Login.cshtml: ok
 @model LoginVM
 @{
     ViewData["Title"] = "Login";
@@ -930,7 +929,7 @@ else
 }
 
 
-29. Crie dentro da pasta Views\Auth um arquivo com o nome Registro.cshtml:
+29. Crie dentro da pasta Views\Auth um arquivo com o nome Registro.cshtml:  ok
 @model RegistroVM
 @{
     ViewData["Title"] = "Registro";
@@ -985,11 +984,11 @@ else
 }
 
 
-31. Criar um Controller na pasta Controllers com o nome AdminController:
+31. Criar um Controller na pasta Controllers com o nome AdminController: ok
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace <NOME DO PROJETO>.UI.Controllers;
+namespace AleCell.UI.Controllers;
 
 [Authorize(Roles = "Administrador")]
 public class AdminController : Controller
@@ -1014,7 +1013,7 @@ public class AdminController : Controller
 }
 
 
-32. Criar na pasta Views uma pasta Admin e dentro um arquivo Index.cshtml:
+32. Criar na pasta Views uma pasta Admin e dentro um arquivo Index.cshtml: ok
 @{
     ViewData["Title"] = "Área Administrativa";
 }
